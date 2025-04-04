@@ -13,7 +13,7 @@ export default function JoystickControls({ isEmergencyStopped }: JoystickControl
   const leftJoystickRef = useRef<HTMLDivElement>(null)
   const rightJoystickRef = useRef<HTMLDivElement>(null)
 
-  const handleJoystickStart = (e: React.MouseEvent | React.TouchEvent, side: "left" | "right") => {
+  const handleJoystickStart = (_e: React.MouseEvent | React.TouchEvent, side: "left" | "right") => {
     if (isEmergencyStopped) return
 
     const setActive = side === "left" ? setLeftActive : setRightActive
