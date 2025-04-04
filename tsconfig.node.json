@@ -26,13 +26,7 @@
     "composite": true,
 
     /* Types */
-    "types": [
-      "@types/babel__core",
-      "@types/babel__generator",
-      "@types/babel__template",
-      "@types/babel__traverse",
-      "@types/json-schema"
-    ]
+    "types": ["node"]
   },
   "include": ["vite.config.ts"]
 }
