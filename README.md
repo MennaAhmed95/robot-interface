@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# Robot Control Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application for remote operation of robotic systems in tunnel environments. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Visualization Modes
 
-## Expanding the ESLint configuration
+- **Camera View**: Real-time video feed with customizable lighting options
+- **3D Map**: Three-dimensional representation of the robot's environment
+- **2D Map**: Top-down view with path visualization
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Control Systems
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Dual Joystick Controls**: Intuitive movement control with touch/mouse support
+- **Drive Modes**: Switch between Auto, Semi-Auto, and Manual operation
+- **Speed Control**: Adjust speed with 0.5x, 1x, and 2x multipliers
+- **Emergency Stop**: Instantly halt all robot operations
+
+### Lighting Options
+
+- **Standard Light**: General illumination
+- **Spot Light**: Focused beam for detailed inspection
+- **Laser**: Precision targeting for measurements
+
+### Telemetry Display
+
+- **Speed Indicator**: Real-time velocity monitoring
+- **Angle Indicators**: Orientation and inclination visualization
+- **Status Metrics**: Distance traveled, running time, GPS coordinates, and more
+
+### Responsive Design
+
+- **Mobile Optimization**: Full functionality on smartphones and tablets
+- **Adaptive Layout**: Automatically adjusts to different screen sizes
+- **Touch-Friendly Controls**: Designed for both touch and mouse interaction
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/robot-control-interface.git
+cd robot-control-interface
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## Development
+
+This project was created with Vite, React, and TypeScript. The UI is built with Tailwind CSS for responsive design.
+
+### Project Structure
+
+- `src/components/controls/`: UI controls for robot operation
+- `src/components/displays/`: Display components for telemetry and status
+- `src/components/hud/`: Heads-up display components
+- `src/components/robot-control-interface.tsx`: Main container component
+- `src/components/video-feed.tsx`: Visualization component for different view modes
+
+### Key Components
+
+- **RobotControlInterface**: Main container component
+- **TopHUD**: Displays critical metrics and status information
+- **VideoFeed**: Renders different visualization modes
+- **JoystickControls**: Handles movement input
+- **ControlButtons**: Manages operation modes and settings
+- **AngleIndicators**: Shows orientation information
+- **SpeedDisplay**: Displays current velocity
+- **MapToggle**: Switches between visualization modes
